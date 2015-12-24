@@ -25,5 +25,11 @@ source ~/gocode/src/github.com/jesselucas/binpath/bp_bash_complete
 # gv: Used to wrap go get to add -v flag
 export GOCOMMANDLOCATION=/usr/local/bin
 
+# r directory history
+export R_DIRHISTORY=30
+
+# r global history
+export R_GLOBALHISTORY=100
+
 # . ~/gocode/src/github.com/forestgiant/gv/go_to_gv
 . ~/gocode/src/github.com/jesselucas/r/r.sh
