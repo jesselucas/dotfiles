@@ -8,20 +8,17 @@ fi
 # Aliases
 alias ls='ls -Glah' # colored ls in OSX
 alias jesselucas='cd $GOPATH/src/github.com/jesselucas' #cd into my gocode directory
-alias xcs='cd $GOPATH/src/gitlab.fg/xcs' #cd into the xcs
 alias fgwork='cd $GOPATH/src/gitlab.fg/' #cd into forest giant gitlab folder
 alias fgpublic='cd $GOPATH/src/github.com/forestgiant/' #cd into forest giant gitlab folder
 alias gocode='cd $GOPATH/src' #cd into gocode src
 alias gs='git status' # quick git status
-alias bp='binpath'
 
-### Added GO paths
-export FGCODEPATH=$HOME/code
+# GO paths
 export GOPATH=$HOME/gocode
 export PATH=$PATH:$GOPATH/bin
 
-# gv: Used to wrap go get to add -v flag
-export GOCOMMANDLOCATION=/usr/local/bin
+# Rust
+source $HOME/.cargo/env
 
 # r directory history
 export R_DIRHISTORY=100
@@ -33,3 +30,7 @@ export R_GLOBALHISTORY=1000
 
 # r sourced from r -install 
 . /Users/jesse/.r.sh
+
+# gpg
+GPG_TTY=$(tty)
+export GPG_TTY
