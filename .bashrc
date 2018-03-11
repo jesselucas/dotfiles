@@ -29,3 +29,6 @@ export R_GLOBALHISTORY=1000
 
 # r sourced from r -install 
 . /Users/jesse/.r.sh
+
+# https://github.com/jesselucas/nudge
+export NUDGEPATH=$HOME/.nudge/nudge.toml
