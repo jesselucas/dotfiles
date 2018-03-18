@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -o vi
+
 # Set local bin
 export PATH=$PATH:/usr/local/bin
 
