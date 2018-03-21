@@ -1,0 +1,3 @@
+keymap:
+  insert:
+    ctrl-j: application::switch_to_normal_mode
