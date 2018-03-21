@@ -20,6 +20,8 @@ alias fgwork='cd $GOPATH/src/gitlab.fg/' #cd into forest giant gitlab folder
 alias fgpublic='cd $GOPATH/src/github.com/forestgiant/' #cd into forest giant gitlab folder
 alias gocode='cd $GOPATH/src' #cd into gocode src
 alias gs='git status' # quick git status
+alias alacritty='open -a /Applications/Alacritty.app/ -n'
+
 
 # GO paths
 export GOPATH=$HOME/gocode
@@ -36,7 +38,7 @@ export R_GLOBALHISTORY=1000
 
 # . ~/gocode/src/github.com/forestgiant/gv/go_to_gv
 
-# r sourced from r -install 
+# r sourced from r -install
 . /Users/jesse/.r.sh
 
 # https://github.com/jesselucas/nudge
