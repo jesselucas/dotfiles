@@ -1,3 +1,26 @@
+tab_width: 4
 keymap:
-  insert:
-    ctrl-j: application::switch_to_normal_mode
+    normal:
+        R: buffer::redo
+    insert:
+        ctrl-j: application::switch_to_normal_mode
+    jump:
+        ctrl-j: application::switch_to_normal_mode
+    line_jump:
+        ctrl-j: application::switch_to_normal_mode
+    search:
+        ctrl-j: application::switch_to_normal_mode
+    search_insert:
+        ctrl-j: application::switch_to_normal_mode
+    path:
+        ctrl-j: application::switch_to_normal_mode
+    search_select:
+        ctrl-j: application::switch_to_normal_mode
+    select:
+        R: buffer::redo
+        ctrl-j: application::switch_to_normal_mode
+    select_line:
+        R: buffer::redo
+        ctrl-j: application::switch_to_normal_mode
+    confirm:
+        ctrl-j: application::switch_to_normal_mode
