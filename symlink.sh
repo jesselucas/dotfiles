@@ -1,5 +1,4 @@
-#!/bin/bash
-
+#!/bin/bash 
 # Check to see if we are in the dotfiles git directory
 GITORIGIN=$( git config --get remote.origin.url )
 if [ "$GITORIGIN" != "git@github.com:jesselucas/dotfiles.git" ]; then
@@ -11,15 +10,18 @@ fi
 DOTFILES=$( pwd )
 src[0]=$DOTFILES
 src[1]=$DOTFILES/amp
+src[2]=$DOTFILES/amp/themes
 
 # Create a map like structure of destinations and files
 # index is used as key to associate both dest and files
 dest[0]=$HOME
 dest[1]="$HOME/Library/Application Support/amp"
+dest[2]="$HOME/Library/Application Support/amp/themes"
 
 # Set files as values
 files0=( .bashrc .tmux.conf .vimrc .git-prompt-colors.sh )
 files1=( config.yml )
+files2=( Tomorrow-Night-Eighties.tmTheme ) 
 
 # Loop over each destination and use i as a key
 # and the value is files$i array
