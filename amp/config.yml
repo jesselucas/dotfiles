@@ -1,16 +1,22 @@
 theme: Tomorrow-Night-Eighties
-tab_width: 4
+tab_width: 2
 keymap:
     normal:
         R: buffer::redo
+        ctrl-u: view::scroll_up
+        ctrl-d: view::scroll_down
     insert:
         ctrl-j: application::switch_to_normal_mode
+        ctrl-u: view::scroll_up
+        ctrl-d: view::scroll_down
     jump:
         ctrl-j: application::switch_to_normal_mode
     line_jump:
         ctrl-j: application::switch_to_normal_mode
     search:
         ctrl-j: application::switch_to_normal_mode
+        ctrl-u: view::scroll_up
+        ctrl-d: view::scroll_down
     search_insert:
         ctrl-j: application::switch_to_normal_mode
     path:
@@ -20,8 +26,12 @@ keymap:
     select:
         R: buffer::redo
         ctrl-j: application::switch_to_normal_mode
+        ctrl-u: view::scroll_up
+        ctrl-d: view::scroll_down
     select_line:
         R: buffer::redo
         ctrl-j: application::switch_to_normal_mode
+        ctrl-u: view::scroll_up
+        ctrl-d: view::scroll_down
     confirm:
         ctrl-j: application::switch_to_normal_mode
