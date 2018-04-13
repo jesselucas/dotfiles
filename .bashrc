@@ -13,7 +13,7 @@ fi
 
 # Aliases
 # alias ls='ls -Glah' # colored ls in OSX
-alias ls='exa -la'
+alias ls='exa -la --color=always'
 alias gojesselucas='cd $GOPATH/src/github.com/jesselucas' #cd into my gocode directory
 alias jesselucas='cd $HOME/code/github.com/jesselucas'
 alias fgwork='cd $GOPATH/src/gitlab.fg/' #cd into forest giant gitlab folder
