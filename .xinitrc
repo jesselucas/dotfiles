@@ -1,4 +1,4 @@
 exec setxkbmap -option ctrl:nocaps &
 exec xbattbar &
-exec redshift &
+exec sctd &
 cwm

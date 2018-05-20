@@ -5,6 +5,8 @@
 # Turn off Strict Bourne shell mode.
 set +o sh
 
+OS=`uname -s`
+
 # Check to see if we are in the dotfiles git directory
 GITORIGIN=`git config --get remote.origin.url`
 if [ "$GITORIGIN" != "git@github.com:jesselucas/dotfiles.git" ]; then
@@ -31,10 +33,23 @@ dest[3]="$HOME/Library/Application Support/amp/syntaxes"
 dest[4]="$HOME/.config/alacritty"
 
 # Set files as values
-files0[0]=".bashrc" 
-files0[1]=".tmux.conf" 
-files0[2]=".vimrc" 
-files0[3]=".git-prompt-colors.sh"
+files0[0]=".tmux.conf" 
+files0[1]=".vimrc" 
+files0[2]=".git-prompt-colors.sh"
+
+# OpenBSD specific $HOME files
+if [ $OS == "OpenBSD" ]; then
+	echo "OpenBSD"
+	files0[3]=".Xdefaults"	
+	files0[4]=".xinitrc"	
+	files0[5]=".cwmrc"
+	files0[6]=".profile"
+	files0[7]=".kshrc"
+	files0[9]="wifiLocation.sh"
+else
+	files0[3]=".bashrc" 
+fi
+
 files1[0]="config.yml"
 files2[0]="Tomorrow-Night-Eighties.tmTheme"
 files3[0]="Shell-Unix-Generic.sublime-syntax"

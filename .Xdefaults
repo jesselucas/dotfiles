@@ -1,7 +1,19 @@
-Xft.dpi: 216 
+Xft.dpi: 160 
+Xft.antialias: 1
+Xft.rgba: rgb
 
+!! X cursor
+Xcursor.theme: redglass
+Xcursor.size: 36 
+
+XTerm*termName: xterm-256color
 XTerm*selectToClipboard: true
 XTerm.vt100.translations: #override \n\
-	Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
-	Ctrl Shift <Key>V: insert-selection(CLIPBOARD)
-xterm*faceName:DejaVu Sans Mono:pixelsize=20
+	Alt <Key>C: copy-selection(CLIPBOARD) \n\
+	Alt <Key>V: insert-selection(CLIPBOARD)
+XTerm*faceName:DejaVu Sans Mono:pixelsize=24:antialias=true
+XTerm*background:black
+XTerm*foreground:white
+
+! $OpenBSD: dot.Xdefaults,v 1.3 2014/07/10 10:22:59 jasper Exp $
+XTerm*loginShell:true
