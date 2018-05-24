@@ -45,6 +45,7 @@ if [ $OS == "OpenBSD" ]; then
 	files0[5]=".cwmrc"
 	files0[6]=".profile"
 	files0[7]=".kshrc"
+	files0[8]=".spectrwm.conf"
 	files0[9]="wifiLocation.sh"
 else
 	files0[3]=".bashrc" 
