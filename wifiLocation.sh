@@ -9,6 +9,7 @@
 # Define valid iwm0 locations.
 LOCATION[0]="home"
 LOCATION[1]="work"
+LOCATION[2]="hotel"
 
 # Usage message.
 USAGE="Usage: Argument must be a valid location: ${LOCATION[*]}"
