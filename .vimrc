@@ -16,6 +16,10 @@ Plug 'junegunn/vim-plug'
 " easy motion
 Plug 'easymotion/vim-easymotion'
 
+" rust
+Plug 'rust-lang/rust.vim'
+Plug 'timonv/vim-cargo'
+
 " prettier for javascript
 Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install',
