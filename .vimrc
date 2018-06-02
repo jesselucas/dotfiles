@@ -1,3 +1,16 @@
+" set color scheme
+colo desert
+
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -19,6 +32,12 @@ Plug 'easymotion/vim-easymotion'
 " rust
 Plug 'rust-lang/rust.vim'
 Plug 'timonv/vim-cargo'
+
+" c
+Plug 'vim-syntastic/syntastic'
+
+" Go
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " prettier for javascript
 Plug 'prettier/vim-prettier', {
