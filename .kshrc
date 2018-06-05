@@ -27,6 +27,7 @@ fi
 alias ls='ls -glah'
 alias gocode='cd $GOPATH/src/github.com/jesselucas'
 
+export NUDGEPATH=$HOME/.nudge/nudge.toml
 export LC_CTYPE='en_US.UTF-8'
 export GPG_TTY=$(tty)
 export PATH HOME TERM 
