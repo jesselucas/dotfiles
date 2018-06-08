@@ -38,6 +38,7 @@ Plug 'vim-syntastic/syntastic'
 
 " Go
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+let g:go_fmt_command = "goimports"
 
 " prettier for javascript
 Plug 'prettier/vim-prettier', {

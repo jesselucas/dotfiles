@@ -26,6 +26,7 @@ fi
 
 alias ls='ls -glah'
 alias gocode='cd $GOPATH/src/github.com/jesselucas'
+alias gocover='go test -coverprofile coverage.out && go tool cover -html=coverage.out'
 
 export NUDGEPATH=$HOME/.nudge/nudge.toml
 export LC_CTYPE='en_US.UTF-8'
