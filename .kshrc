@@ -13,6 +13,9 @@ alias ls='ls -glah'
 alias gocode='cd $GOPATH/src/github.com/jesselucas'
 alias gocover='go test -coverprofile coverage.out && go tool cover -html=coverage.out'
 
+# Custom prompt: (green)username (pink)path
+PS1="\e[38;5;35m\u\e[m \e[38;5;204m\W\$ \e[m"
+
 export NUDGEPATH=$HOME/.nudge/nudge.toml
 export LC_CTYPE='en_US.UTF-8'
 export GPG_TTY=$(tty)
