@@ -10,6 +10,7 @@
 LOCATION[0]="home"
 LOCATION[1]="work"
 LOCATION[2]="hotel"
+LOCATION[3]="mobile"
 
 # Usage message.
 USAGE="Usage: Argument must be a valid location: ${LOCATION[*]}"
@@ -36,4 +37,4 @@ if [ "$FOUND" == false ]; then
 fi
 
 cp /etc/hostname.iwm0.$1 /etc/hostname.iwm0
-sh /etc/netstart iwm0
+sh /etc/netstart
