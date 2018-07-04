@@ -14,6 +14,7 @@ alias gocode='cd $GOPATH/src/github.com/jesselucas'
 alias gowork='cd $GOPATH/src/git.forestgiant.com/'
 alias gocover='go test -coverprofile coverage.out && go tool cover -html=coverage.out'
 alias lynx='lynx -vikeys'
+alias w3m='w3m https://duckduckgo.com/'
 
 # Custom prompt: (green)username (pink)path
 PS1="\e[38;5;35m\u@\h\e[m \e[38;5;204m\W\$ \e[m"
