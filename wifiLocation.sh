@@ -6,14 +6,8 @@
 #
 #	Should be ran with doas.
 
-# Define valid iwm0 locations.
-LOCATION[0]="home"
-LOCATION[1]="work"
-LOCATION[2]="hotel"
-LOCATION[3]="mobile"
-
 # Usage message.
-USAGE="Usage: Argument must be a valid location: ${LOCATION[*]}"
+USAGE="Usage: Argument must be a valid hostname file in /etc/ Ex. /etc/hostname.iwm0.home"
 
 # Make sure a valid place is passed as an argument.
 if [ -z "$1" ] || [ "$1" == " " ]; then
@@ -23,9 +17,9 @@ fi
 
 # Verify $1 is a valid location.
 FOUND=false
-for l in "${LOCATION[@]}"
+for f in /etc/*
 do
-	if [ "$l" == "$1" ] ; then
+	if [ "$f" == "/etc/hostname.iwm0.$1" ] ; then
 		FOUND=true
 	fi
 done
