@@ -2,10 +2,12 @@
 #
 #
 
-# Turn off Strict Bourne shell mode.
-set +o sh
-
 OS=`uname -s`
+
+if [ $OS == "OpenBSD" ]; then
+	# Turn off Strict Bourne shell mode.
+	set +o sh
+fi
 
 # Check to see if we are in the dotfiles git directory
 GITORIGIN=`git config --get remote.origin.url`
