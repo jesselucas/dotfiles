@@ -29,6 +29,7 @@ export PATH=$PATH:$GOPATH/bin
 
 # Rust
 source $HOME/.cargo/env
+export RUST_SRC_PATH=/Users/jesse/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src
 
 # r directory history
 export R_DIRHISTORY=100

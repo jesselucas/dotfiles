@@ -20,6 +20,15 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source ~/.vimrc
 endif
 
+" rls
+if executable('rls')
+	au User lsp_setup call lsp#register_server({
+		\ 'name': 'rls',
+		\ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rls']},
+		\ 'whitelist': ['rust'],
+		\ })
+endif 
+
 " Specify a directory for plugins
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
@@ -33,6 +42,13 @@ Plug 'easymotion/vim-easymotion'
 " rust
 Plug 'rust-lang/rust.vim'
 Plug 'timonv/vim-cargo'
+
+" rust rls
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+
 
 " c
 Plug 'vim-syntastic/syntastic'
