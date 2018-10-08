@@ -14,11 +14,6 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source ~/.vimrc
-endif
 
 " rls
 if executable('rls')
@@ -28,6 +23,20 @@ if executable('rls')
 		\ 'whitelist': ['rust'],
 		\ })
 endif 
+
+" Async complete smart complete
+" let g:asyncomplete_smart_completion = 1
+" let g:asyncomplete_auto_popup = 1
+
+" Auto formt rust with rustfmt
+let g:rustfmt_autosave = 1
+
+" Install vim plug if needed
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source ~/.vimrc
+endif
 
 " Specify a directory for plugins
 " - Avoid using standard Vim directory names like 'plugin'
@@ -48,7 +57,6 @@ Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
-
 
 " c
 Plug 'vim-syntastic/syntastic'
