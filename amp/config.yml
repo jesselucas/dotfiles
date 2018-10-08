@@ -1,5 +1,5 @@
 theme: Tomorrow-Night-Eighties
-tab_width: 2
+tab_width: 4
 keymap:
     normal:
         R: buffer::redo
