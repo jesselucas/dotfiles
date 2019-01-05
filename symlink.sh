@@ -24,11 +24,12 @@ DOTFILES=`pwd`
 
 # Create src directories
 src[0]=$DOTFILES
-src[1]=$DOTFILES/amp
+src[2]=$DOTFILES/amp
 src[2]=$DOTFILES/amp/themes
 src[3]=$DOTFILES/amp/syntaxes
 src[4]=$DOTFILES/alacritty
 src[5]=$DOTFILES/xenodm
+src[6]=$DOTFILES/apm
 
 # Create a map like structure of destinations and files
 # index is used as key to associate both dest and files
@@ -38,6 +39,7 @@ dest[2]="$HOME/Library/Application Support/amp/themes"
 dest[3]="$HOME/Library/Application Support/amp/syntaxes"
 dest[4]="$HOME/.config/alacritty"
 dest[5]="/etc/X11/xenodm"
+dest[6]="/etc/apm"
 
 # Set files as values
 files0[0]=".tmux.conf" 
@@ -56,7 +58,10 @@ if [ $OS == "OpenBSD" ]; then
 	files0[9]="wifiLocation.sh"
 	
 	# xenodm
-	force5[1]="Xsetup_0"
+	force5[0]="Xsetup_0"
+
+	# apm
+	force6[0]="suspend"
 else
 	files1[0]="config.yml"
 	files2[0]="Tomorrow-Night-Eighties.tmTheme"
@@ -69,7 +74,7 @@ fi
 # and the value is files$i array
 # i=0
 # for _ in "${dest[*]}"; do
-for i in 0 1 2 3 4 5; do
+for i in 0 1 2 3 4 5 6; do
 	d=${dest[$i]}
 	s=${src[$i]}
 	filesArray=files$i

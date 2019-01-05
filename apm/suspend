@@ -1,0 +1,6 @@
+#!/bin/sh
+
+su - jesse -c '
+export DISPLAY=:0
+xlock &
+'
