@@ -3,6 +3,11 @@ echo "Everything will be ok."
 
 PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/games
 
+if [ -d ~/.cargo ]; then
+	export PATH=$PATH:$HOME/.cargo/bin
+fi
+
+
 GOPATH=~
 if [ -d ~/go ]; then
 	export GOPATH=$HOME/go
