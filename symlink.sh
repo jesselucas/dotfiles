@@ -4,15 +4,18 @@
 
 OS=`uname -s`
 
-if [ $OS == "OpenBSD" ]; then
-	# Turn off Strict Bourne shell mode.
+if [ $OS = "OpenBSD" ]; then
+	echo "Turn off Strict Bourne shell mode."
 	set +o sh
 fi
 
 # Check to see if we are in the dotfiles git directory
-GITORIGIN=`git config --get remote.origin.url`
-if [ "$GITORIGIN" != "git@github.com:jesselucas/dotfiles.git" ]; then
+GIT_ORIGIN=`git config --get remote.origin.url`
+EXPECTED_ORIGIN="git@github.com:jesselucas/dotfiles.git "
+if [ "$GITORIGIN" != "$EXPECTEDORIGIN" ]; then
 	echo "Script must be ran from within jesselucas/dotfiles git repo"
+	echo "Expected: $EXPECTED_ORIGIN" 
+	echo "Received: $GIT_ORIGIN"
 	exit 1
 fi
 
@@ -25,6 +28,7 @@ src[1]=$DOTFILES/amp
 src[2]=$DOTFILES/amp/themes
 src[3]=$DOTFILES/amp/syntaxes
 src[4]=$DOTFILES/alacritty
+src[5]=$DOTFILES/xenodm
 
 # Create a map like structure of destinations and files
 # index is used as key to associate both dest and files
@@ -33,13 +37,14 @@ dest[1]="$HOME/Library/Application Support/amp"
 dest[2]="$HOME/Library/Application Support/amp/themes"
 dest[3]="$HOME/Library/Application Support/amp/syntaxes"
 dest[4]="$HOME/.config/alacritty"
+dest[5]="/etc/X11/xenodm"
 
 # Set files as values
 files0[0]=".tmux.conf" 
 files0[1]=".vimrc" 
 files0[2]=".git-prompt-colors.sh"
 
-# OpenBSD specific $HOME files
+# OpenBSD specific files
 if [ $OS == "OpenBSD" ]; then
 	echo "OpenBSD"
 	files0[3]=".Xdefaults"	
@@ -49,30 +54,34 @@ if [ $OS == "OpenBSD" ]; then
 	files0[7]=".kshrc"
 	files0[8]=".spectrwm.conf"
 	files0[9]="wifiLocation.sh"
+	
+	# xenodm
+	force5[1]="Xsetup_0"
 else
+	files1[0]="config.yml"
+	files2[0]="Tomorrow-Night-Eighties.tmTheme"
+	files3[0]="Shell-Unix-Generic.sublime-syntax"
+	files4[0]="alacritty.yml"
 	files0[3]=".bashrc" 
 fi
 
-files1[0]="config.yml"
-files2[0]="Tomorrow-Night-Eighties.tmTheme"
-files3[0]="Shell-Unix-Generic.sublime-syntax"
-files4[0]="alacritty.yml"
-
 # Loop over each destination and use i as a key
 # and the value is files$i array
-i=0
-for _ in "${dest[*]}"; do
+# i=0
+# for _ in "${dest[*]}"; do
+for i in 0 1 2 3 4 5; do
 	d=${dest[$i]}
 	s=${src[$i]}
-	vArray=files$i
+	filesArray=files$i
+	forceArray=force$i
   	
-	# Loop through all files in each values array
-	vArray=$(eval echo \${files$i[*]})
-	for f in $vArray; do
+	# Loop through all files in each files array
+	filesArray=$(eval echo \${files$i[*]})
+	for f in $filesArray; do
 		srcPath=$s/$f
 		destPath=$d/$f
 
-		# Test if destPath doesn't exist and srchPath exist
+		# Test if destPath doesn't exist and srcPath exist
 		if [ ! -e "${destPath}" ] && [ -e "${srcPath}" ]; then
 			ln -s "${srcPath}" "${destPath}"
 			echo "Symlinking: $srcPath to $destPath"
@@ -80,6 +89,23 @@ for _ in "${dest[*]}"; do
 			echo "Skipping: $destPath"
 		fi
 	done
+
+	# Loop through all files in each force array
+	forceArray=$(eval echo \${force$i[*]})
+	for f in $forceArray; do
+		srcPath=$s/$f
+		destPath=$d/$f
+		
+		# doas copy srcPath to destPath 
+		if [ $OS == "OpenBSD" ]; then
+			doas ln -sf "${srcPath}" "${destPath}"
+		else
+			sudo ln -sf "${srcPath}" "${destPath}"
+		fi
+	
+		echo "Force Symlinking: $srcPath to $destPath"
+	done
+
 	# Increment i.
-	i=i+1	
+#	i=i+1	
 done
