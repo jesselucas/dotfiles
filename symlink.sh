@@ -51,14 +51,16 @@ if [ $OS == "OpenBSD" ]; then
 	echo "OpenBSD"
 	files0[3]=".Xdefaults"	
 	files0[4]=".xinitrc"	
-	files0[5]=".cwmrc"
-	files0[6]=".profile"
-	files0[7]=".kshrc"
-	files0[8]=".spectrwm.conf"
-	files0[9]="wifiLocation.sh"
+	files0[5]=".xsession"	
+	files0[6]=".cwmrc"
+	files0[7]=".profile"
+	files0[8]=".kshrc"
+	files0[9]=".spectrwm.conf"
+	files0[10]="wifiLocation.sh"
 	
 	# xenodm
 	force5[0]="Xsetup_0"
+	force5[1]="Xresources"
 
 	# apm
 	force6[0]="suspend"
@@ -102,13 +104,12 @@ for i in 0 1 2 3 4 5 6; do
 		destPath=$d/$f
 		
 		# doas copy srcPath to destPath 
+		echo "Force symlink $srcPath to $destPath"
 		if [ $OS == "OpenBSD" ]; then
 			doas ln -sf "${srcPath}" "${destPath}"
 		else
 			sudo ln -sf "${srcPath}" "${destPath}"
 		fi
-	
-		echo "Force Symlinking: $srcPath to $destPath"
 	done
 
 	# Increment i.
