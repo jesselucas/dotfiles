@@ -1,35 +1,6 @@
-" general confi
+" general config
 set number
-
-" set color scheme
 colo desert
-
-" syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-
-" rls
-if executable('rls')
-	au User lsp_setup call lsp#register_server({
-		\ 'name': 'rls',
-		\ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rls']},
-		\ 'whitelist': ['rust'],
-		\ })
-endif 
-
-" Async complete smart complete
-" let g:asyncomplete_smart_completion = 1
-" let g:asyncomplete_auto_popup = 1
-
-" Auto formt rust with rustfmt
-let g:rustfmt_autosave = 1
 
 " Install vim plug if needed
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -52,14 +23,41 @@ Plug 'easymotion/vim-easymotion'
 Plug 'rust-lang/rust.vim'
 Plug 'timonv/vim-cargo'
 
+" Auto formt rust with rustfmt
+let g:rustfmt_autosave = 1
+
 " rust rls
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
+if executable('rls')
+	au User lsp_setup call lsp#register_server({
+		\ 'name': 'rls',
+		\ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rls']},
+		\ 'whitelist': ['rust'],
+		\ })
+endif 
+
+" Async complete smart complete
+" let g:asyncomplete_smart_completion = 1
+" let g:asyncomplete_auto_popup = 1
+
 " c
 Plug 'vim-syntastic/syntastic'
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_c_checkers=['make', 'gcc', 'clang_check', 'clang_tidy']
+let g:syntastic_c_clang_tidy_sort=1
+let g:syntastic_c_clang_check_sort=1
 
 " Go
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
