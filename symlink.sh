@@ -29,7 +29,7 @@ src[2]=$DOTFILES/amp/themes
 src[3]=$DOTFILES/amp/syntaxes
 src[4]=$DOTFILES/alacritty
 src[5]=$DOTFILES/X11
-src[6]=$DOTFILES/xenodm
+src[6]=$DOTFILES/X11/xenodm
 src[7]=$DOTFILES/apm
 
 # Create a map like structure of destinations and files
