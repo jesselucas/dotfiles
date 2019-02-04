@@ -21,7 +21,7 @@ alias fgpublic='cd $GOPATH/src/github.com/forestgiant/' #cd into forest giant gi
 alias gocode='cd $GOPATH/src' #cd into gocode src
 alias gs='git status' # quick git status
 alias alacritty='open -a /Applications/Alacritty.app/ -n'
-
+alias gocover='go test -coverprofile cover.out && go tool cover -html=cover.out'
 
 # GO paths
 export GOPATH=$HOME/gocode
