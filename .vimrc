@@ -63,6 +63,26 @@ let g:syntastic_c_clang_check_sort=1
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 let g:go_fmt_command = "goimports"
 
+" NERDTree
+Plug 'scrooloose/nerdtree'
+
+" NERDTree show hidden files
+let NERDTreeShowHidden=1
+
+" NERDTree open if no file is selected
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" NERDTree mouse click
+set mouse=a
+let g:NERDTreeMouseMode=3
+
+" NERDTree CTRL-N toggle 
+map <C-n> :NERDTreeToggle<CR>
+
+" NERDTree close when only window left
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 " prettier for javascript
 Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install',
