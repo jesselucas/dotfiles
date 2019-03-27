@@ -51,3 +51,13 @@ export GPG_TTY
 
 # alacritty
 source $HOME/code/github.com/jwilm/alacritty/alacritty-completions.bash
+
+# Nordic SDK
+export PATH=/usr/local/nrfjprog:$PATH
+
+# Zephyr
+source $HOME/code/github.com/forestgiant/zephyr/zephyr-env.sh
+export ZEPHYR_TOOLCHAIN_VARIANT=gnuarmemb
+export GNUARMEMB_TOOLCHAIN_PATH=/usr/local
+
+source $HOME/code/github.com/forestgiant/zephyr/zephyr-alias.sh
