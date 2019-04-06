@@ -45,19 +45,22 @@ endif
 " let g:asyncomplete_auto_popup = 1
 
 " c
-Plug 'vim-syntastic/syntastic'
+" Plug 'vim-syntastic/syntastic'
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_c_checkers=['make', 'gcc', 'clang_check', 'clang_tidy']
-let g:syntastic_c_clang_tidy_sort=1
-let g:syntastic_c_clang_check_sort=1
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_c_checkers = ['make', 'gcc', 'clang_check', 'clang_tidy']
+" let g:syntastic_c_clang_tidy_sort = 1
+" let g:syntastic_c_clang_check_sort = 1
+" let g:syntastic_c_check_header = 1
+" let g:syntastic_c_remove_include_errors = 1 
+" let g:syntastic_rust_checkers = ['cargo']
 
 " Go
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
