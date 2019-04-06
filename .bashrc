@@ -56,8 +56,6 @@ source $HOME/code/github.com/jwilm/alacritty/alacritty-completions.bash
 export PATH=/usr/local/nrfjprog:$PATH
 
 # Zephyr
-source $HOME/code/github.com/forestgiant/zephyr/zephyr-env.sh
+source $HOME/code/github.com/rothriver/rrz/rrf/zephyr-alias.sh
 export ZEPHYR_TOOLCHAIN_VARIANT=gnuarmemb
 export GNUARMEMB_TOOLCHAIN_PATH=/usr/local
-
-source $HOME/code/github.com/forestgiant/zephyr/zephyr-alias.sh
