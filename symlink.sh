@@ -24,7 +24,7 @@ DOTFILES=`pwd`
 
 # Create src directories
 src[0]=$DOTFILES
-src[2]=$DOTFILES/amp
+src[1]=$DOTFILES/amp
 src[2]=$DOTFILES/amp/themes
 src[3]=$DOTFILES/amp/syntaxes
 src[4]=$DOTFILES/alacritty
@@ -47,18 +47,19 @@ dest[7]="/etc/apm"
 files0[0]=".tmux.conf" 
 files0[1]=".vimrc" 
 files0[2]=".git-prompt-colors.sh"
+files0[3]=".abcde.conf"
 
 # OpenBSD specific files
 if [ $OS == "OpenBSD" ]; then
 	echo "OpenBSD"
-	files0[3]=".Xdefaults"	
-	files0[4]=".xinitrc"	
-	files0[5]=".xsession"	
-	files0[6]=".cwmrc"
-	files0[7]=".profile"
-	files0[8]=".kshrc"
-	files0[9]=".spectrwm.conf"
-	files0[10]="wifiLocation.sh"
+	files0[4]=".Xdefaults"	
+	files0[5]=".xinitrc"	
+	files0[6]=".xsession"	
+	files0[7]=".cwmrc"
+	files0[8]=".profile"
+	files0[9]=".kshrc"
+	files0[10]=".spectrwm.conf"
+	files0[11]="wifiLocation.sh"
 
 	# X11
 	force5[0]="xorg.conf"
@@ -74,7 +75,7 @@ else
 	files2[0]="Tomorrow-Night-Eighties.tmTheme"
 	files3[0]="Shell-Unix-Generic.sublime-syntax"
 	files4[0]="alacritty.yml"
-	files0[3]=".bashrc" 
+	files0[4]=".bashrc" 
 fi
 
 # Loop over each destination and use i as a key
@@ -83,8 +84,7 @@ fi
 # for _ in "${dest[*]}"; do
 for i in 0 1 2 3 4 5 6 7; do
 	d=${dest[$i]}
-	s=${src[$i]}
-	filesArray=files$i
+	s=${src[$i]} filesArray=files$i
 	forceArray=force$i
   	
 	# Loop through all files in each files array
