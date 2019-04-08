@@ -31,6 +31,7 @@ src[4]=$DOTFILES/alacritty
 src[5]=$DOTFILES/X11
 src[6]=$DOTFILES/X11/xenodm
 src[7]=$DOTFILES/apm
+src[8]=$DOTFILES/beets
 
 # Create a map like structure of destinations and files
 # index is used as key to associate both dest and files
@@ -42,12 +43,14 @@ dest[4]="$HOME/.config/alacritty"
 dest[5]="/etc/X11"
 dest[6]="/etc/X11/xenodm"
 dest[7]="/etc/apm"
+dest[8]="$HOME/.config/beets"
 
 # Set files as values
 files0[0]=".tmux.conf" 
 files0[1]=".vimrc" 
 files0[2]=".git-prompt-colors.sh"
 files0[3]=".abcde.conf"
+files8[0]="config.yaml"
 
 # OpenBSD specific files
 if [ $OS == "OpenBSD" ]; then
@@ -82,7 +85,7 @@ fi
 # and the value is files$i array
 # i=0
 # for _ in "${dest[*]}"; do
-for i in 0 1 2 3 4 5 6 7; do
+for i in 0 1 2 3 4 5 6 7 8; do
 	d=${dest[$i]}
 	s=${src[$i]} filesArray=files$i
 	forceArray=force$i
