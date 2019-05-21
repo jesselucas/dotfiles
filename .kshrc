@@ -32,9 +32,8 @@ export PATH HOME TERM
 # pkg_add/info for snapshot
 pkg_add() { command doas pkg_add -D snap "$@"; }
 pkg_info() { command pkg_info -D snap "$@"; }
-# pkg_info() { command pkg_info -D snap "$@"; }
 
- pkg() { 
+pkg() { 
 	case "$1" in
 		add)    shift ; doas pkg_add -D snap $* ;;
 		del)    shift ; pkg_del $*              ;;
