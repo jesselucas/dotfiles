@@ -50,6 +50,7 @@ files0[0]=".tmux.conf"
 files0[1]=".vimrc" 
 files0[2]=".git-prompt-colors.sh"
 files0[3]=".abcde.conf"
+files4[0]="alacritty.yml"
 files8[0]="config.yaml"
 
 # OpenBSD specific files
@@ -77,7 +78,6 @@ else
 	files1[0]="config.yml"
 	files2[0]="Tomorrow-Night-Eighties.tmTheme"
 	files3[0]="Shell-Unix-Generic.sublime-syntax"
-	files4[0]="alacritty.yml"
 	files0[4]=".bashrc" 
 fi
 

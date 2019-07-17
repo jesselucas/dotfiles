@@ -2,5 +2,5 @@
 
 su - jesse -c '
 export DISPLAY=:0
-slock &
+xlock &
 '
