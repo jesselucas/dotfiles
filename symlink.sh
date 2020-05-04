@@ -78,8 +78,9 @@ else
 	files1[0]="config.yml"
 	files2[0]="Tomorrow-Night-Eighties.tmTheme"
 	files3[0]="Shell-Unix-Generic.sublime-syntax"
-	files0[4]=".bashrc" 
-	files0[5]="zephyr-alias.sh" 
+	files0[4]=".bash_profile" 
+	files0[5]=".bashrc" 
+	files0[6]="zephyr-alias.sh" 
 fi
 
 # Loop over each destination and use i as a key
