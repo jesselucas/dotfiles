@@ -46,7 +46,7 @@ GPG_TTY=$(tty)
 export GPG_TTY
 
 # alacritty
-source $HOME/code/github.com/jwilm/alacritty/alacritty-completions.bash
+source $HOME/code/github.com/jwilm/alacritty/extra/completions/alacritty.bash
 
 # Nordic SDK
 export PATH=/usr/local/nrfjprog:$PATH
