@@ -1,6 +1,4 @@
 #!/bin/sh -
-#
-#
 
 OS=`uname -s`
 
@@ -22,7 +20,7 @@ fi
 # Set dotfiles directory to pwd
 DOTFILES=`pwd`
 
-# Create src directories
+# Set src directories
 src[0]=$DOTFILES
 src[1]=$DOTFILES/amp
 src[2]=$DOTFILES/amp/themes
@@ -32,6 +30,7 @@ src[5]=$DOTFILES/X11
 src[6]=$DOTFILES/X11/xenodm
 src[7]=$DOTFILES/apm
 src[8]=$DOTFILES/beets
+src[9]=$DOTFILES/kitty
 
 # Create a map like structure of destinations and files
 # index is used as key to associate both dest and files
@@ -44,6 +43,7 @@ dest[5]="/etc/X11"
 dest[6]="/etc/X11/xenodm"
 dest[7]="/etc/apm"
 dest[8]="$HOME/.config/beets"
+dest[9]="$HOME/.config/kitty"
 
 # Set files as values
 files0[0]=".tmux.conf" 
@@ -52,6 +52,7 @@ files0[2]=".git-prompt-colors.sh"
 files0[3]=".abcde.conf"
 files4[0]="alacritty.yml"
 files8[0]="config.yaml"
+files9[0]="kitty.conf"
 
 # OpenBSD specific files
 if [ $OS == "OpenBSD" ]; then
@@ -83,11 +84,8 @@ else
 	files0[6]="zephyr-alias.sh" 
 fi
 
-# Loop over each destination and use i as a key
-# and the value is files$i array
-# i=0
-# for _ in "${dest[*]}"; do
-for i in 0 1 2 3 4 5 6 7 8; do
+# Set the number of iterations using i as the key
+for i in 0 1 2 3 4 5 6 7 8 9; do
 	d=${dest[$i]}
 	s=${src[$i]} filesArray=files$i
 	forceArray=force$i
@@ -113,15 +111,10 @@ for i in 0 1 2 3 4 5 6 7 8; do
 		srcPath=$s/$f
 		destPath=$d/$f
 		
-		# doas copy srcPath to destPath 
+		# copy srcPath to destPath
 		echo "Force symlink $srcPath to $destPath"
 		if [ $OS == "OpenBSD" ]; then
 			doas ln -sf "${srcPath}" "${destPath}"
 		else
 			sudo ln -sf "${srcPath}" "${destPath}"
 		fi
-	done
-
-	# Increment i.
-#	i=i+1	
-done
