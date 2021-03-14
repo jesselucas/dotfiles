@@ -1,6 +1,5 @@
 echo "Everything will be ok."
 
-
 PATH=$HOME/.local/bin:$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/games
 
 if [ -d ~/.cargo ]; then
