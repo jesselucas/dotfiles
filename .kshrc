@@ -30,9 +30,8 @@ export GPG_TTY=$(tty)
 export PATH HOME TERM 
 
 # pkg_add/info for snapshot
-# pkg_add() { command doas pkg_add -D snap "$@"; }
-pkg_add() { command doas pkg_add "$@"; }
-pkg_info() { command pkg_info "$@"; }
+pkg_add() { command doas pkg_add -D snap "$@"; }
+pkg_info() { command pkg_info -D snap "$@"; }
 
 # pkg() { 
 #	case "$1" in
