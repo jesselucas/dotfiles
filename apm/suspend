@@ -1,6 +1,6 @@
 #!/bin/sh
 
-su - jesse -c '
+su - jrl -c '
 export DISPLAY=:0
 xlock &
 '
