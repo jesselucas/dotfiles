@@ -1,6 +1,2 @@
 #!/bin/sh
-
-su - jrl -c '
-export DISPLAY=:0
-xlock &
-'
+pkill -USR1 xidle
