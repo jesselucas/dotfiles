@@ -1,6 +1,6 @@
 #!/bin/sh -
 
-OS=`uname -s`
+OS=$(uname -s)
 
 if [ $OS = "OpenBSD" ]; then
 	echo "Turn off Strict Bourne shell mode."
@@ -8,9 +8,9 @@ if [ $OS = "OpenBSD" ]; then
 fi
 
 # Check to see if we are in the dotfiles git directory
-GIT_ORIGIN=`git config --get remote.origin.url`
+GIT_ORIGIN=$(git config --get remote.origin.url)
 EXPECTED_ORIGIN="git@github.com:jesselucas/dotfiles.git "
-if [ "$GITORIGIN" != "$EXPECTEDORIGIN" ]; then
+if [ $GIT_ORIGIN != $EXPECTED_ORIGIN ]; then
 	echo "Script must be ran from within jesselucas/dotfiles git repo"
 	echo "Expected: $EXPECTED_ORIGIN" 
 	echo "Received: $GIT_ORIGIN"
@@ -18,7 +18,7 @@ if [ "$GITORIGIN" != "$EXPECTEDORIGIN" ]; then
 fi
 
 # Set dotfiles directory to pwd
-DOTFILES=`pwd`
+DOTFILES=$(pwd)
 
 # Set src directories
 src[0]=$DOTFILES
@@ -55,7 +55,7 @@ files8[0]="config.yaml"
 files9[0]="kitty.conf"
 
 # OpenBSD specific files
-if [ $OS == "OpenBSD" ]; then
+if [ $OS = "OpenBSD" ]; then
 	echo "OpenBSD"
 	files0[4]=".Xdefaults"	
 	files0[5]=".xinitrc"	
@@ -74,7 +74,7 @@ if [ $OS == "OpenBSD" ]; then
 	force6[1]="Xresources"
 
 	# apm
-	force7[0]="suspend"
+	copy7[0]="suspend"
 else
 	files1[0]="config.yml"
 	files2[0]="Tomorrow-Night-Eighties.tmTheme"
@@ -105,6 +105,21 @@ for i in 0 1 2 3 4 5 6 7 8 9; do
 		fi
 	done
 
+	# Copy files	
+	copyArray=$(eval echo \${copy$i[*]})
+	for f in $copyArray; do
+		srcPath=$s/$f
+		destPath=$d/$f
+		
+		# copy srcPath to destPath
+		echo "copy $srcPath to $destPath"
+		if [ $OS = "OpenBSD" ]; then
+			doas cp "${srcPath}" "${destPath}"
+		else
+			sudo cp "${srcPath}" "${destPath}"
+		fi
+	done
+
 	# Loop through all files in each force array
 	forceArray=$(eval echo \${force$i[*]})
 	for f in $forceArray; do
@@ -113,7 +128,7 @@ for i in 0 1 2 3 4 5 6 7 8 9; do
 		
 		# copy srcPath to destPath
 		echo "Force symlink $srcPath to $destPath"
-		if [ $OS == "OpenBSD" ]; then
+		if [ $OS = "OpenBSD" ]; then
 			doas ln -sf "${srcPath}" "${destPath}"
 		else
 			sudo ln -sf "${srcPath}" "${destPath}"
