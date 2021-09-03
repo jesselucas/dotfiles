@@ -60,7 +60,7 @@ let g:syntastic_typescript_checkers = ['tslint', 'tsc']
 " let g:asyncomplete_auto_popup = 1
 
 " c
-
+Plug 'rhysd/vim-clang-format'
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
 " set statusline+=%*
@@ -74,7 +74,7 @@ let g:syntastic_typescript_checkers = ['tslint', 'tsc']
 " let g:syntastic_c_clang_check_sort = 1
 " let g:syntastic_c_check_header = 1
 " let g:syntastic_c_remove_include_errors = 1 
-" let g:syntastic_rust_checkers = ['cargo']
+
 
 " Go
 " let g:syntastic_go_checkers = ['golint', 'govet']

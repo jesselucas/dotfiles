@@ -75,6 +75,7 @@ if [ $OS = "OpenBSD" ]; then
 
 	# apm
 	copy7[0]="suspend"
+	copy7[1]="resume"
 else
 	files1[0]="config.yml"
 	files2[0]="Tomorrow-Night-Eighties.tmTheme"
@@ -89,6 +90,7 @@ for i in 0 1 2 3 4 5 6 7 8 9; do
 	d=${dest[$i]}
 	s=${src[$i]} filesArray=files$i
 	forceArray=force$i
+	copyArray=copy$i
   	
 	# Loop through all files in each files array
 	filesArray=$(eval echo \${files$i[*]})
