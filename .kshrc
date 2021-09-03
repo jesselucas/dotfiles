@@ -25,7 +25,7 @@ alias gcc='egcc'
 PS1="\e[38;5;35m\u@\h\e[m \e[38;5;204m\W\$ \e[m"
 
 export NUDGEPATH=$HOME/.nudge/nudge.toml
-export LC_CTYPE='en_US.UTF-8'
+export LC_CTYPE=en_US.UTF-8
 export LANG=C
 
 export GPG_TTY=$(tty)
