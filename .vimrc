@@ -19,6 +19,9 @@ Plug 'junegunn/vim-plug'
 " easy motion
 Plug 'easymotion/vim-easymotion'
 
+" zig
+Plug 'ziglang/zig.vim'
+
 " rust
 Plug 'rust-lang/rust.vim'
 Plug 'timonv/vim-cargo'

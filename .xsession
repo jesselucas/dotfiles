@@ -8,4 +8,4 @@ sctd &
 pkill xidle
 xidle -delay 5 -se -program "/usr/X11R6/bin/xlock -mode blank" -timeout 360 &
 
-spectrwm
+dwm
