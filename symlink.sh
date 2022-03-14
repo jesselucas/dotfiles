@@ -31,6 +31,7 @@ src[6]=$DOTFILES/X11/xenodm
 src[7]=$DOTFILES/apm
 src[8]=$DOTFILES/beets
 src[9]=$DOTFILES/kitty
+src[10]=$DOTFILES
 
 # Create a map like structure of destinations and files
 # index is used as key to associate both dest and files
@@ -44,6 +45,7 @@ dest[6]="/etc/X11/xenodm"
 dest[7]="/etc/apm"
 dest[8]="$HOME/.config/beets"
 dest[9]="$HOME/.config/kitty"
+dest[10]="$HOME/.emacs.d"
 
 # Set files as values
 files0[0]=".tmux.conf" 
@@ -53,6 +55,7 @@ files0[3]=".abcde.conf"
 files4[0]="alacritty.yml"
 files8[0]="config.yaml"
 files9[0]="kitty.conf"
+files10[0]="init.el"
 
 # OpenBSD specific files
 if [ $OS = "OpenBSD" ]; then
@@ -86,7 +89,7 @@ else
 fi
 
 # Set the number of iterations using i as the key
-for i in 0 1 2 3 4 5 6 7 8 9; do
+for i in 0 1 2 3 4 5 6 7 8 9 10; do
 	d=${dest[$i]}
 	s=${src[$i]} filesArray=files$i
 	forceArray=force$i

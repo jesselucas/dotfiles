@@ -63,6 +63,8 @@ export LANG=en_US.UTF-8
 
 export GPG_TTY=$(tty)
 export PATH HOME TERM 
+export WASI_SDK_PATH=/home/jrl/code/github.com/WebAssembly/wasi-sdk/build/install/opt/wasi-sdk
+
 
 # pkg_add/info for snapshot
  pkg_add() { command doas pkg_add -D snap "$@"; }
