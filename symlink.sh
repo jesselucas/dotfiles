@@ -32,6 +32,7 @@ src[7]=$DOTFILES/apm
 src[8]=$DOTFILES/beets
 src[9]=$DOTFILES/kitty
 src[10]=$DOTFILES
+src[11]=$DOTFILES/rc.d
 
 # Create a map like structure of destinations and files
 # index is used as key to associate both dest and files
@@ -46,6 +47,7 @@ dest[7]="/etc/apm"
 dest[8]="$HOME/.config/beets"
 dest[9]="$HOME/.config/kitty"
 dest[10]="$HOME/.emacs.d"
+dest[11]="/etc/rc.d"
 
 # Set files as values
 files0[0]=".tmux.conf" 
@@ -79,6 +81,10 @@ if [ $OS = "OpenBSD" ]; then
 	# apm
 	copy7[0]="suspend"
 	copy7[1]="resume"
+
+	# rc.d
+	force11[0]="wg_quick"
+
 else
 	files1[0]="config.yml"
 	files2[0]="Tomorrow-Night-Eighties.tmTheme"
@@ -89,7 +95,7 @@ else
 fi
 
 # Set the number of iterations using i as the key
-for i in 0 1 2 3 4 5 6 7 8 9 10; do
+for i in 0 1 2 3 4 5 6 7 8 9 10 11; do
 	d=${dest[$i]}
 	s=${src[$i]} filesArray=files$i
 	forceArray=force$i

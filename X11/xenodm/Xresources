@@ -1,7 +1,7 @@
 xlogin.Login.echoPasswd:       true
 xlogin.Login.fail:             fail
 xlogin.Login.greeting:
-xlogin.Login.namePrompt:       \040login\040
+xlogin.Login.namePrompt:       login\040
 xlogin.Login.passwdPrompt:     passwd\040
 
 xlogin.Login.height:           220
