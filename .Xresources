@@ -1,0 +1,19 @@
+Xft.dpi: 160 
+Xft.antialias: 1
+Xft.rgba: rgb
+
+!! X cursor
+Xcursor.theme: redglass
+Xcursor.size: 36 
+
+XTerm*termName: xterm-256color
+XTerm*selectToClipboard: true
+XTerm*disallowedWindowOps: 20,21,SetXprop !! tmux clipboard
+XTerm.vt100.translations: #override \n\
+	Alt <Key>C: copy-selection(CLIPBOARD) \n\
+	Alt <Key>V: insert-selection(CLIPBOARD)
+!! XTerm*faceName:DejaVu Sans Mono:pixelsize=24:antialias=true
+XTerm*background:black
+XTerm*foreground:white
+
+XTerm*loginShell:true

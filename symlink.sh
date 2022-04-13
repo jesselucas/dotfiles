@@ -33,6 +33,7 @@ src[8]=$DOTFILES/beets
 src[9]=$DOTFILES/kitty
 src[10]=$DOTFILES
 src[11]=$DOTFILES/rc.d
+src[12]=$DOTFILES
 
 # Create a map like structure of destinations and files
 # index is used as key to associate both dest and files
@@ -48,6 +49,7 @@ dest[8]="$HOME/.config/beets"
 dest[9]="$HOME/.config/kitty"
 dest[10]="$HOME/.emacs.d"
 dest[11]="/etc/rc.d"
+dest[12]="$HOME/.config/kitty"
 
 # Set files as values
 files0[0]=".tmux.conf" 
@@ -58,6 +60,7 @@ files4[0]="alacritty.yml"
 files8[0]="config.yaml"
 files9[0]="kitty.conf"
 files10[0]="init.el"
+files12[0]="kitty.conf"
 
 # OpenBSD specific files
 if [ $OS = "OpenBSD" ]; then
@@ -84,7 +87,10 @@ if [ $OS = "OpenBSD" ]; then
 
 	# rc.d
 	force11[0]="wg_quick"
-
+elif [ $OS = "Linux" ]; then
+	echo "Linux"
+	files0[4]=".Xresources"
+	files0[5]=".bash_profile"
 else
 	files1[0]="config.yml"
 	files2[0]="Tomorrow-Night-Eighties.tmTheme"
