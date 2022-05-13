@@ -33,7 +33,8 @@ src[8]=$DOTFILES/beets
 src[9]=$DOTFILES/kitty
 src[10]=$DOTFILES
 src[11]=$DOTFILES/rc.d
-src[12]=$DOTFILES
+src[12]=$DOTFILES/nvim
+src[13]=$DOTFILES/nvim/lua
 
 # Create a map like structure of destinations and files
 # index is used as key to associate both dest and files
@@ -49,7 +50,8 @@ dest[8]="$HOME/.config/beets"
 dest[9]="$HOME/.config/kitty"
 dest[10]="$HOME/.emacs.d"
 dest[11]="/etc/rc.d"
-dest[12]="$HOME/.config/kitty"
+dest[12]="$HOME/.config/nvim"
+dest[13]="$HOME/.config/nvim/lua"
 
 # Set files as values
 files0[0]=".tmux.conf" 
@@ -60,7 +62,12 @@ files4[0]="alacritty.yml"
 files8[0]="config.yaml"
 files9[0]="kitty.conf"
 files10[0]="init.el"
-files12[0]="kitty.conf"
+files12[0]="init.lua"
+files13[0]="keys.lua"
+files13[1]="nvim-tree-setup.lua"
+files13[2]="opts.lua"
+files13[3]="plugins.lua"
+files13[4]="vars.lua"
 
 # OpenBSD specific files
 if [ $OS = "OpenBSD" ]; then
@@ -101,7 +108,7 @@ else
 fi
 
 # Set the number of iterations using i as the key
-for i in 0 1 2 3 4 5 6 7 8 9 10 11; do
+for i in 0 1 2 3 4 5 6 7 8 9 10 11 12 13; do
 	d=${dest[$i]}
 	s=${src[$i]} filesArray=files$i
 	forceArray=force$i
