@@ -1,0 +1,19 @@
+# OpenBSD Install Notes 
+## Packages
+* vim
+* dwm
+* dmenu
+* xbattbar
+* password-store
+* git
+* firefox
+* emacs
+* bombadillo
+
+## Setup
+### Power
+```
+rcctl enable apmd
+rcctl set apmd flags -A
+rcctl start apmd
+```
