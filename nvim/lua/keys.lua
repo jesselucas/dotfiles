@@ -7,3 +7,4 @@ local function map(mode, lhs, rhs, opts)
 end
 
 map('n', '<C-n>', ':NvimTreeToggle<CR>')
+map('n', 'f', '<cmd>HopWord<CR>')
