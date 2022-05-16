@@ -9,3 +9,4 @@ require('plugins')
 require('nvim-tree-setup')
 
 require'hop'.setup()
+require'lspconfig'.clangd.setup{}
