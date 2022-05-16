@@ -2,7 +2,7 @@
 (setq package-enable-at-startup nil)
 
 ;; change defaults
-(setq gc-cons-threshold 200000000) ;; 200mb
+(setq gc-cons-threshold (* 200 1024 1024))
 (setq read-process-output-max (* 20 1024 1024)) ;; 20mb
 
 ;; set path incase not open from shell
@@ -28,22 +28,32 @@
 
 ;; package list
 (straight-use-package 'evil)
+(straight-use-package 'magit)
 (straight-use-package 'counsel)
 
 ;; enable ivy
 (ivy-mode)
+(global-set-key (kbd "C-M-s") 'swiper)
+(global-set-key (kbd "C-M-j") 'avy-goto-char)
+(global-set-key (kbd "C-c r") 'ivy-resume)
+(global-set-key (kbd "M-x") 'counsel-M-x)
+(global-set-key (kbd "C-x C-f") 'counsel-find-file)
 
 ;; setup evil
-(setq  evil-want-C-u-scroll t)
+(setq evil-want-C-u-scroll t)
 (require 'evil)
 (evil-mode 1)
 
 ;; evil keymaps
 (define-key evil-normal-state-map (kbd "TAB") 'forward-button)
 
+;; remap C-u
+(global-set-key (kbd "C-s-u") 'universal-argument)
+
+
 ;; setup dart/flutter
 (straight-use-package 'dart-mode)
-;; (straight-use-package 'lsp-mode)
+(straight-use-package 'lsp-mode)
 (straight-use-package 'lsp-dart)
 (straight-use-package 'lsp-treemacs)
 (straight-use-package 'flycheck)
@@ -57,6 +67,7 @@
   (when (bound-and-true-p lsp-mode)
     (lsp-format-buffer)))
 (add-hook 'before-save-hook 'jrl-lsp-format-on-save-hook)
+(setq lsp-keymap-prefix "C-c l")
 
 ;; org-roam
 (straight-use-package 'org-roam)
@@ -105,3 +116,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;; global modes
+(add-hook 'prog-mode-hook 'linum-mode)
+(add-hook 'prog-mode-hook 'hl-line-mode)
