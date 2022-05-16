@@ -13,7 +13,7 @@ XTerm.vt100.translations: #override \n\
 	Alt <Key>C: copy-selection(CLIPBOARD) \n\
 	Alt <Key>V: insert-selection(CLIPBOARD)
 !! XTerm*faceName:DejaVu Sans Mono:pixelsize=24:antialias=true
-XTerm*background:black
-XTerm*foreground:white
-
-XTerm*loginShell:true
+XTerm*background: black
+XTerm*foreground: white
+XTerm*loginShell: true
+XTerm*metaSendsEscape: true
