@@ -43,6 +43,10 @@ if [ -d ~/go ]; then
 	export PATH=$PATH:$GOPATH/bin
 fi
 
+if [ -d ~/.cargo ]; then
+	export PATH=$PATH:$HOME/.cargo/bin
+fi
+
 alias ls='ls -glah'
 alias gocode='cd $GOPATH/src/github.com/jesselucas'
 alias gowork='cd $GOPATH/src/git.forestgiant.com/'
