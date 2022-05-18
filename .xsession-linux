@@ -1,0 +1,7 @@
+xset -b &
+xbanish &
+setxkbmap -option ctrl:nocaps &
+xbattbar &
+sct 4500 &
+
+dwm
