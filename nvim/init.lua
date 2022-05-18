@@ -23,3 +23,5 @@ require("lspconfig").clangd.setup({
 		"--pch-storage=memory",
 	},
 })
+
+require('lspconfig').zls.setup{}

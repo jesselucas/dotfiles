@@ -11,3 +11,4 @@ source ~/.bashrc
 # Hello Messsage --------------------------------------------------
 echo -e "Everything will be ok."
 export PATH="/usr/local/sbin:$PATH"
+. "$HOME/.cargo/env"
