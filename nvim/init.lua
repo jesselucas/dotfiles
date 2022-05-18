@@ -14,8 +14,6 @@ require("lspconfig").clangd.setup({
 	cmd = {
 		"clangd",
 		"--clang-tidy",
-		"--background-index",
-		"--std=c17",
 		"--suggest-missing-includes",
 		"--all-scopes-completion",
 		"--header-insertion=iwyu",
