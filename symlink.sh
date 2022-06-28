@@ -68,6 +68,7 @@ files13[1]="nvim-tree-setup.lua"
 files13[2]="opts.lua"
 files13[3]="plugins.lua"
 files13[4]="vars.lua"
+files13[5]="formatter-setup.lua"
 
 # OpenBSD specific files
 if [ $OS = "OpenBSD" ]; then
