@@ -21,5 +21,22 @@ require("lspconfig").clangd.setup({
 		"--pch-storage=memory",
 	},
 })
-
-require('lspconfig').zls.setup{}
+require("lspconfig")["rust_analyzer"].setup({
+	on_attach = on_attach,
+	flags = lsp_flags,
+	settings = {
+		["rust-analyzer"] = {
+			assist = {
+				importGranularity = "module",
+				importPrefix = "self",
+			},
+			cargo = {
+				loadOutDirsFromCheck = true,
+			},
+			procMacro = {
+				enable = true,
+			},
+		},
+	},
+})
+require("lspconfig").zls.setup({})
