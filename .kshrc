@@ -67,7 +67,8 @@ export LANG=en_US.UTF-8
 
 export GPG_TTY=$(tty)
 export PATH HOME TERM 
-export WASI_SDK_PATH=/home/jrl/code/github.com/WebAssembly/wasi-sdk/build/install/opt/wasi-sdk
+export WASI_SDK_PATH="$HOME/code/github.com/WebAssembly/wasi-sdk/build/install/opt/wasi-sdk"
+export RUST_SRC_PATH="$HOME/code/github.com/rust-lang/rust/library"
 
 
 # pkg_add/info for snapshot
