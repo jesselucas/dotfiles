@@ -98,7 +98,8 @@ if [ $OS = "OpenBSD" ]; then
 elif [ $OS = "Linux" ]; then
 	echo "Linux"
 	files0[4]=".Xresources"
-	files0[5]=".bash_profile"
+	files0[5]=".bashrc" 
+	files0[6]=".bash_profile"
 else
 	files1[0]="config.yml"
 	files2[0]="Tomorrow-Night-Eighties.tmTheme"
