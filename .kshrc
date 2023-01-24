@@ -72,8 +72,8 @@ export RUST_SRC_PATH="$HOME/code/github.com/rust-lang/rust/library"
 
 
 # pkg_add/info for snapshot
- pkg_add() { command doas pkg_add -D snap "$@"; }
- pkg_info() { command pkg_info -D snap "$@"; }
+# pkg_add() { command doas pkg_add -D snap "$@"; }
+# pkg_info() { command pkg_info -D snap "$@"; }
 
 # pkg() { 
 #	case "$1" in

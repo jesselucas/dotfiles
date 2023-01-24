@@ -6,5 +6,6 @@ require("formatter").setup({
 		lua = { require("formatter.filetypes.lua").stylua },
 		rust = { require('formatter.filetypes.rust').rustfmt },
 		zig = { require('formatter.filetypes.zig').zigfmt },
+		go = { require('formatter.filetypes.go').gofmt },
 	},
 })
