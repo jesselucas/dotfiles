@@ -69,6 +69,7 @@ files13[2]="opts.lua"
 files13[3]="plugins.lua"
 files13[4]="vars.lua"
 files13[5]="formatter-setup.lua"
+files13[6]="cmp-setup.lua"
 
 # OpenBSD specific files
 if [ $OS = "OpenBSD" ]; then

@@ -5,7 +5,7 @@ require("vars")
 require("opts")
 require("keys")
 require("plugins")
-
+require("cmp-setup")
 require("nvim-tree-setup")
 require("formatter-setup")
 
