@@ -26,4 +26,10 @@ return require("packer").startup(function()
 	use("L3MON4D3/LuaSnip") -- Snippets plugin
 	use("mhartington/formatter.nvim")
 	use("ziglang/zig.vim")
+	use('nvim-lua/plenary.nvim')
+	use('crispgm/nvim-go')
+	use 'ray-x/go.nvim'
+	use 'neovim/nvim-lspconfig'
+	use 'nvim-treesitter/nvim-treesitter'
+--	use('rcarriga/nvim-notify')
 end)
